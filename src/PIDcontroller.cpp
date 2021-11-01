@@ -3,6 +3,8 @@
 
 float PIDController::CalcEffort(float current)
 {
+    //if current > target sends negative turn right (left motor spin faster)
+    //if current < target sends positive left turn  (right motor spin faster) 
     float error = target - current;
     return ComputeEffort(error);
 }
